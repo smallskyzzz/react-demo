@@ -7,6 +7,7 @@ import { BrowserRouter, Route, Routes, Link } from 'react-router-dom'
 const Context = lazy(() => import('./page/context/index'))
 const Hook = lazy(() => import('./page/hook/index'))
 const Assemble = lazy(() => import('./page/assemble/index'))
+const Hoc = lazy(() => import('./page/hoc/index'))
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Link to={'/Hook'}>hook</Link>
           <Link to={'/context'}>context</Link>
           <Link to={'/assemble'}>组合</Link>
+          <Link to={'/hoc'}>高阶组件</Link>
         </div>
         {/*外面可再包一层err组件处理加载失败异常*/}
         <Suspense fallback={<div>loading...</div>}>
@@ -23,7 +25,8 @@ function App() {
             <Route path={'/'} element={<Hook/>}/>
             <Route path={'/hook'} element={<Hook/>}/>
             <Route path={'/context'} element={<Context/>}/>
-            <Route path={'/assemble'} element={<Assemble/>}></Route>
+            <Route path={'/assemble'} element={<Assemble/>}/>
+            <Route path={'/hoc'} element={<Hoc/>}/>
           </Routes>
         </Suspense>
       </BrowserRouter>
