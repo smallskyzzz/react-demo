@@ -10,10 +10,12 @@ function WithUserInfo(WrappedComponent) {
   )
 }
 
-function Wrapper() {
+function Wrapper(props) {
+  console.log(props)
+  const name = props.userInfo.name
   return (
-    <div>父组件</div>
+    <div>父组件{name}</div>
   )
 }
 
-export default WithUserInfo(Wrapper)
+export default () => WithUserInfo(Wrapper)
