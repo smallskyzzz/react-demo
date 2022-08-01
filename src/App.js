@@ -8,6 +8,7 @@ const Context = lazy(() => import('./page/context/index'))
 const Hook = lazy(() => import('./page/hook/index'))
 const Assemble = lazy(() => import('./page/assemble/index'))
 const Hoc = lazy(() => import('./page/hoc/index'))
+const UseStateWithCallback = lazy(() => import('./page/useStateWithCallback/index'))
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Link to={'/context'}>context</Link>
           <Link to={'/assemble'}>组合</Link>
           <Link to={'/hoc'}>高阶组件</Link>
+          <Link to={'/useStateWithCallback'}>加强版useState</Link>
         </div>
         {/*外面可再包一层err组件处理加载失败异常*/}
         <Suspense fallback={<div>loading...</div>}>
@@ -27,6 +29,7 @@ function App() {
             <Route path={'/context'} element={<Context/>}/>
             <Route path={'/assemble'} element={<Assemble/>}/>
             <Route path={'/hoc'} element={<Hoc/>}/>
+            <Route path={'/useStateWithCallback'} element={<UseStateWithCallback/>}/>
           </Routes>
         </Suspense>
       </BrowserRouter>
